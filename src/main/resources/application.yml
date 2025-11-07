@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: SpringBoot Application
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vishal
+    username: vishal
+    password: vishal
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+#        jdbc:
+#          time_zone: Asia/Kolkata
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  main:
+    web-application-type: servlet
+
+#logging:
+#  level:
+#    org.hibernate: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+#    org.springframework.jdbc: DEBUG

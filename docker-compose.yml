@@ -1,0 +1,22 @@
+services:
+  postgresql:
+    image: bitnami/postgresql:latest
+    environment:
+      - POSTGRESQL_POSTGRES_PASSWORD=root
+      - POSTGRESQL_DATABASE=vishal
+      - POSTGRESQL_USERNAME=vishal
+      - POSTGRESQL_PASSWORD=vishal
+    volumes:
+      - db:/data/postgres
+#    ports:
+#      - 5432
+    networks:
+      - app-tier
+    restart: unless-stopped
+
+networks:
+  app-tier:
+    driver: bridge
+
+volumes:
+  db:
